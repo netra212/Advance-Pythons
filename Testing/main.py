@@ -1,7 +1,10 @@
 
-def do_stuff(num):
+def do_stuff(num=0):
     try:
-        return int(num) + 5
+        if num:
+            return int(num) + 5
+        else:
+            return "Please enter number"
     except ValueError as error:
         return error
     
