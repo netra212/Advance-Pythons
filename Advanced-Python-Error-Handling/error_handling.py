@@ -18,7 +18,11 @@ num2 = int(input("Enter second number: "))
 def sum(num1, num2):
     try:
         return num1 + num2
-    except TypeError as error:
+    except (TypeError, ZeroDivisionError) as error:
         print(error)
+    else:
+        print("Thank you....!")
+    finally:
+        print("OK..., I am finally done.")
 
 print(sum(num1, num2))
