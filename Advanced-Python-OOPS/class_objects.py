@@ -32,10 +32,12 @@ print(f"player_age:  {player_age}")
 
 class PlayerCharacter:
     '''Constructor: Automatically called while instantiating Objects.'''
+    memership = True
     # This is called `dunder` method.
     def __init__(self, name, age):
-        self.name = name
-        self.age = age
+        if (PlayerCharacter.memership):
+            self.name = name
+            self.age = age
 
     def run(self):
         print("Run.OK")
