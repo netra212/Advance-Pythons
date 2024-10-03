@@ -10,6 +10,10 @@ while True:
     else:
         print("Thank you..!")
         break
+    finally:
+        print("OK.Bro.")
+
+    print("Can you hear me ?")
 
 # Let's try another example. 
 num1 = int(input("Enter first number: "))
