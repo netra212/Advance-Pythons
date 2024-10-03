@@ -17,4 +17,3 @@ def long_time():
         i*5
 
 long_time()
-

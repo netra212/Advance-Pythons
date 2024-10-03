@@ -29,9 +29,3 @@ def bye():
 # print(b())
 
 hello('hiiii')
-
-
-'''
-# Practical Application of the Decorators:
--> 
-'''
