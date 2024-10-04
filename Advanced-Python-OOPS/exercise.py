@@ -15,7 +15,6 @@ cat1 = Cat('cat1', 5)
 cat2 = Cat('Cat2', 7)
 cat3 = Cat('Cat3', 3)
 
-
 # 2 Create a function that finds the oldest cat.
 def oldest_cat(*args):
     return max(args)

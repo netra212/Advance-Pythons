@@ -22,5 +22,3 @@ if __name__ == '__main__':
         except ValueError:
             print('please enter a number')
             continue
-
-
