@@ -81,6 +81,13 @@ class Walk:
                 file_list.append(_file)
 
 walk = Walk(dir_list, file_list, path)
+
+--------------------------------------------------------
+# Processing Nested Folders using os.walk()
+for root, dirs, files in os.walk(folder_path):
+    for file in files: # Loop through files. 
+        if file.endswith(".jpg"):
+            print(os.path.join(root, file)) # Print full path of each image. 
 '''
 
 # os.path -> sub-module of the os module that has lots of great functionality built into it. 
@@ -195,4 +202,25 @@ for file in os.listdir(data_path): # Loop through the dataste folder.
             os.path.join(sorted_images, file)
         )
         # Moving file. 
+'''
+
+'''
+# Automation & Performance Optimization.
+# Removing the Corrupted Images. 
+import os
+import cv2  # OpenCV for image processing
+
+image_folder = "dataset/"
+for file in os.listdir(image_folder):
+    path = os.path.join(image_folder, file)
+    try:
+        img = cv2.imread(path)  # Try to load the image
+        if img is None:  # If image is corrupted
+            print("Deleting corrupted image:", file)
+            os.remove(path)  # Delete it
+    except Exception as e:
+        print("Error:", e)
+
+cv2.imread(path) → Loads an image. If it fails, the file might be corrupted.
+os.remove(path) → Deletes corrupted images automatically.
 '''
