@@ -180,3 +180,19 @@ for file in os.listdir(image_folder): # Looping through the files in the folder.
 '''
 
 
+'''
+# Sorting and Organizing Image Datasets
+# sorting and organizing image datasets. 
+os.makedirs("sorted_images", exist_ok=True) # Create folder if it does not exist. 
+
+data_path = "/content/sample_data"
+sorted_images = "/content/sorted_images"
+
+for file in os.listdir(data_path): # Loop through the dataste folder. 
+    if file.endswith(".jpg"): # Check if it's an image. 
+        os.rename(
+            os.path.join(data_path, file), 
+            os.path.join(sorted_images, file)
+        )
+        # Moving file. 
+'''
