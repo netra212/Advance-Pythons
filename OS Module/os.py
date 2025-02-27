@@ -1,5 +1,8 @@
 import os
-# print(os.name)
+'''
+import os → Imports the os module, which provides functions to interact with the operating system.
+'''
+# print(os.name) # → Returns the name of the OS ('posix' for Linux/Mac, 'nt' for Windows).
 
 # # Also, known as mapping object that returns dictionary of the user's environment variables.
 # env_dict = os.environ  
@@ -10,7 +13,7 @@ import os
 # print(os.getenv("TMPDIR")) # Can also be use the getenv to access the environment variable. It does not throw error if there is no any environment variable, it simply return the None. 
 
 # # To get know about the current working directory. 
-# print(os.getcwd())
+# print(os.getcwd())  # Get the current working directory
 
 # # To change the currently running directory. 
 # print(os.chdir("/Users/netrakc/Desktop/Advance-Pythons/OS Module"))
@@ -128,4 +131,36 @@ print(dirname)
 
 print(fname)
 'ChipViewer.py'
+'''
+
+'''
+# Listing Files and Folders. 
+# os.listdir() → Returns a list of all files and directories in the current directory.
+
+print(os.listdir()) # List all files and folders in the current directory. 
+for folders, files in os.listdir():
+    print(folders, files)
+'''
+
+'''
+# Creating and Removing Directories
+os.mkdir("new_folder") # create a new directory. 
+os.rmdir("new_folder") # removing the directory.
+'''
+
+'''
+# Intermediate Level: File & Path Operations
+# Handling File Paths (os.path Module).
+import os 
+path = os.path.join("dataset", "images") # Join paths dynamically. 
+print(path) # Output: "dataset/images"
+
+# Check if path exists. 
+os.path.exists(path) → Returns True if the path exists, else False.
+
+# Get absolute path. 
+os.path.abspath(path) → Converts a relative path into an absolute path.
+
+# Split filename into name and extension. 
+os.path.splittext("image.jpg) → Splits filename into name and extension (('image', '.jpg')).
 '''
