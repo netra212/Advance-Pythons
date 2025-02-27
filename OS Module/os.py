@@ -234,3 +234,27 @@ for file in os.listdir("images"):
     os.rename(os.path.join("images", file), os.path.join("images", new_name))
 
 '''
+
+'''
+# Splitting Dataset into Train/Validation Sets.
+import os
+import random
+
+files = os.listdir("dataset")
+random.shuffle(files)  # Shuffle the dataset
+
+split_ratio = 0.8  # 80% training, 20% validation
+train_files = files[:int(len(files) * split_ratio)]
+val_files = files[int(len(files) * split_ratio):]
+
+# Move files to respective folders
+os.makedirs("train", exist_ok=True)
+os.makedirs("val", exist_ok=True)
+
+for file in train_files:
+    os.rename(os.path.join("dataset", file), os.path.join("train", file))
+
+for file in val_files:
+    os.rename(os.path.join("dataset", file), os.path.join("val", file))
+
+'''
