@@ -1,4 +1,4 @@
-# import os
+import os
 # print(os.name)
 
 # # Also, known as mapping object that returns dictionary of the user's environment variables.
@@ -39,4 +39,57 @@
 
 # os.rename(src, dst)
 # rename function will rename the file or folder. 
-print(os.rename("test_dir", "my_folder"))
+# print(os.rename("test_dir", "my_folder"))
+'''This occurs in our current working directory. It will see an error if we try to rename a file that does not exist or that don't have permission to rename the file.'''
+
+# os.startfile()
+'''allows us to `start` a file with its associated program.Just like when we double click a PDF and it opens is Adobe Reader.'''
+# print(os.startfile("....pdf"))
+
+# os.walk()
+'''os.walk() --> Gives us a way to iterate over a root level path. It means we can pass a path to this function and get access to all its sub-directories and files.Let's use one of the Python folders that we have handy to test this function with.'''
+
+'''
+import os
+
+path = r"/content/images"
+
+dir_list = []
+file_list = []
+
+# Implementing the os.walk()
+class Walk:
+
+    def __init__(self, dir_list, file_list, path):
+
+        self.dir_list = dir_list
+        self.file_list = file_list 
+        self.path = path
+
+    def walk_module(self, dir_list, file_list, path):
+
+        for root, dirs, files in os.walk(self.path):
+            print(root)
+
+            for _dir in dirs:
+                dir_list.append(_dir)
+            
+            for _file in files:
+                file_list.append(_file)
+
+walk = Walk(dir_list, file_list, path)
+'''
+
+# os.path -> sub-module of the os module that has lots of great functionality built into it. 
+    # -> basename. 
+    # -> dirname. 
+    # -> exist. 
+    # -> isdir and isfile. 
+    # -> join. 
+    # -> split()
+
+# return the filename of the path. 
+# base_path = "/Users/netrakc/Desktop/Advance-Pythons/OS Module/os.py"
+# print("returning the filename of the path: ", os.path.basename(base_path))
+
+# 
