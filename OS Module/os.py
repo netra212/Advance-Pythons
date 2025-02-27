@@ -92,4 +92,19 @@ walk = Walk(dir_list, file_list, path)
 # base_path = "/Users/netrakc/Desktop/Advance-Pythons/OS Module/os.py"
 # print("returning the filename of the path: ", os.path.basename(base_path))
 
+# os.path.dirname. 
+# return just the directory portion of the path. 
+# print(os.path.dirname(r"..."))
+
+# os.path.exists --> will tell if a path exist or not. 
+# os.path.exists()
+
+# os.path.isdir / os.path.isfile
+# `isdir` & `isfile` are closely related to the exists method in that they also test for existence. 
+# `isdir` -> Only checks if the path is directory or not. 
+# `isfile` -> Only checks if the path is a file. 
+# If we want to check if a path exist regardless of whether it is a file or a directory, then we'll want to use the exists method. 
+# os.path.isfile(r"C:\Python27\Tools\pynche\ChipViewer.py") return True because this is a file. 
+# os.path.isdir(r'C:\Python27\Tools\pynche\ChipViewer.py') return false because this is file not a directory. 
+
 # 
