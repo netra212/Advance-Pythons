@@ -164,3 +164,19 @@ os.path.abspath(path) → Converts a relative path into an absolute path.
 # Split filename into name and extension. 
 os.path.splittext("image.jpg) → Splits filename into name and extension (('image', '.jpg')).
 '''
+
+'''
+# 🖼 Advanced Level: Image Dataset Handling.
+# 7️⃣ Iterating Over Image Files.
+image_folder = "/content/images/"
+
+# os.listdir(image_folder) → Lists all files in "images/" folder.
+for file in os.listdir(image_folder): # Looping through the files in the folder. 
+    # if file.endswith((".jpg", ".png")): → Checks if the file is an image.
+    if file.endswith((".jpg", ".png")): # Filter only images files. 
+        print("Processing: ", file) # Print filename. 
+
+# This is useful for filtering datasets with mixed file types.
+'''
+
+
