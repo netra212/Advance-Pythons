@@ -107,4 +107,25 @@ walk = Walk(dir_list, file_list, path)
 # os.path.isfile(r"C:\Python27\Tools\pynche\ChipViewer.py") return True because this is a file. 
 # os.path.isdir(r'C:\Python27\Tools\pynche\ChipViewer.py') return false because this is file not a directory. 
 
-# 
+# os.path.join
+# this gives us ability to join one or more path components together using the appropriate separator. 
+# os.path.join("directory_name", "file_name.extension")
+# In the above example, we joined a `directory path` and `file` together to get a fully qualified path. Note: `join` method does not check if result actually exists. 
+
+# `os.path.split`` --> This method will split a path into a tuple that contains the directory and the file.
+'''
+Code:
+=> os.path.split('C:\Python27\Tools\pynche\ChipViewer.py')
+('directory_name', 'filename.extension')
+
+As we see in the above code, it took the path and split in such a way that the last sub-folder became the second element of the tuple with the rest of the path in the first element. 
+
+Code:
+dirname, fname = os.path.split(r'C:\Python27\Tools\pynche\ChipViewer.py')
+
+print(dirname)
+'C:\\Python27\\Tools\\pynche'
+
+print(fname)
+'ChipViewer.py'
+'''
