@@ -224,3 +224,13 @@ for file in os.listdir(image_folder):
 cv2.imread(path) → Loads an image. If it fails, the file might be corrupted.
 os.remove(path) → Deletes corrupted images automatically.
 '''
+
+'''
+# Bulk Rename Files Using Regular Expressions.
+import re
+
+for file in os.listdir("images"):
+    new_name = re.sub(r"\s+", "_", file)  # Replace spaces with underscores
+    os.rename(os.path.join("images", file), os.path.join("images", new_name))
+
+'''
