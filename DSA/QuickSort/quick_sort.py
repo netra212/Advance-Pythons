@@ -6,7 +6,7 @@
 # Algorithms:
 arr =  [ 10, 16, 8, 12, 15, 3, 9, 6 ]
 ------------------------------------------------------
-step 1: select pivot element.
+select pivot element.
     Question: How to select the pivot element ?
         a. Randomly.
         b. Median.
@@ -19,33 +19,35 @@ step 1: select pivot element.
     If other_element < pivot_element => arrange at left.
     If other_element > pivot_element => arrange at right.
 
-step 2:
 ------------------------------------------------------
 '''
 
 
+# Function to find the partition position.
 def partition(arr, low, high):
-    # Taking an last element as pivot element.
+    # Choose the rightmost element as pivot element.
     pivot_element = arr[high]
-    # 'i' to track the how much elements will come less than pivot element.
+    # `i` -> is a pointer to keep track of the elements smaller than pivot.
     # Assuming that there are no any element lesser than pivot element.
-    i = low - 1
+    i = low - 1  # pointer for greater element.
 
-    #
+    # Traversing through all the element and compare each element with pivot.
     for j in range(low, high):
-        
         if arr[j] < pivot_element:
+            # If element smaller than pivot is found.
             i = i + 1
-            # Swap
+            # then swap it with greater element pointed by i.
+            # swapping the pivot element with the greater element specified by i.
             temp = arr[i]
             arr[i] = arr[j]
             arr[j] = temp
 
-    #
+    # At the end, pivot is swapped with the pointer.
     i = i + 1
     temp = arr[i]
     arr[i] = pivot_element
     arr[high] = temp
+    # Return the position from where the parition is performed.
     return i  # return pivot index.
 
 
