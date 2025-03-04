@@ -1,0 +1,6 @@
+#. Factory Design Pattern:- Creational Design Pattern.
+- Create object without exposing the creational logic to the clients and refers to newly created objects using a common interface. 
+- Enscapsulate the object creations and reduce coupling. 
+- Central point of control and Configuration for the object creations.
+- Promoting the open close principle by allowing the new subclasses to be added without modifying the existing code & enabling testing and mocking of the client code without actually instantiating the real objects. 
+- 
