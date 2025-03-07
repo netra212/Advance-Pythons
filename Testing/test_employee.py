@@ -4,12 +4,26 @@ from employee import Employee
 
 class TestEmployee(unittest.TestCase):
 
+    @classmethod
+    def setUpClass(cls):
+        print("setUpClass")
+    
+    @classmethod
+    def classmethod(cls):
+        print("teardownClass")
+
+    # Run before every single test. 
+    def setUp(self):
+        print("\nsetUp")
+        self.emp_1 = Employee("Corey", "Schafer", 50000)
+        self.emp_2 = Employee("Sue", "Smith", 60000)
+    
+    # Run at the end of the code. 
+    def tearDown(self):
+        pass
+
     def test_email(self):
-        print('test_email')
-
-        emp_1 = Employee("Corey", "Schafer", 50000)
-        emp_2 = Employee("Sue", "Smith", 60000)
-
+        print('\ntest_email')
         self.assertEqual(self.emp_1.email, 'Corey.Schafer@email.com')
         self.assertEqual(self.emp_2.email, 'Sue.Smith@email.com')
 
@@ -20,10 +34,8 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.emp_2.email, 'Jane.Smith@email.com')
 
     def test_fullname(self):
-        print('test_fullname')
 
-        emp_1 = Employee("Corey", "Schafer", 50000)
-        emp_2 = Employee("Sue", "Smith", 60000)
+        print('\ntest_fullname')
 
         self.assertEqual(self.emp_1.fullname, 'Corey Schafer')
         self.assertEqual(self.emp_2.fullname, 'Sue Smith')
@@ -35,17 +47,12 @@ class TestEmployee(unittest.TestCase):
         self.assertEqual(self.emp_2.fullname, 'Jane Smith')
 
     def test_apply_raise(self):
-        print('test_apply_raise')
-
-        emp_1 = Employee("Corey", "Schafer", 50000)
-        emp_2 = Employee("Sue", "Smith", 60000)
-        
+        print('\ntest_apply_raise')
         self.emp_1.apply_raise()
         self.emp_2.apply_raise()
 
         self.assertEqual(self.emp_1.pay, 52500)
         self.assertEqual(self.emp_2.pay, 63000)
-
 
 if __name__ == '__main__':
     unittest.main()
