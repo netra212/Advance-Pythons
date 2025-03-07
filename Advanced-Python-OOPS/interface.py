@@ -23,3 +23,6 @@ def make_it_quack(duck):
 if __name__ == "__main__":
     cat = Cat()
     cat.meow()
+    make_it_quack(cat)
+
+    print(dir(cat))
