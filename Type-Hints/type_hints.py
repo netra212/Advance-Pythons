@@ -11,3 +11,4 @@ def calculate_total_per_person(meal_price: float, number_of_people: int, tip: fl
     return per_person_price
 
 print("Total Per Person: ", calculate_total_per_person(100.0, 5))
+print("Total Per Person: ", calculate_total_per_person("One hundred", "Five"))
