@@ -11,5 +11,18 @@ def calculate_total_per_person(meal_price: float, number_of_people: int, tip: fl
     per_person_price: float = price_after_tip / number_of_people
     return per_person_price
 
-print("Total Per Person: ", calculate_total_per_person(100.0, 5))
-print("Total Per Person: ", calculate_total_per_person("One hundred", "Five"))
+# print("Total Per Person: ", calculate_total_per_person(100.0, 5))
+# print("Total Per Person: ", calculate_total_per_person("One hundred", "Five"))
+
+# 
+value: float
+price: float = float(input("What is the meal price ? "))
+num_people: int = int(input("How many people ?"))
+tip: str = input("what is the tip ? (Leave blank for 20%)")
+
+if tip == '':
+    value = calculate_total_per_person(price, num_people)
+else:
+    value = calculate_total_per_person(price, num_people, tip)
+    
+print("Total per person: ", value)
