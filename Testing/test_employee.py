@@ -2,6 +2,35 @@ import unittest
 from unittest.mock import patch
 from employee import Employee
 
+'''
+Mocking in Python is a technique used in unit testing to replace real objects with mock objects that simulate their behavior. This allows you to test components in isolation without relying on external dependencies such as databases, APIs, or file systems.
+
+#. Why Use Mocking?
+-> Isolate components: Ensures tests focus only on the specific functionality being tested.
+-> Avoid side effects: Prevents interactions with external systems like databases or APIs.
+-> Control return values: Allows setting expected responses for function calls.
+-> Simulate exceptions: Helps test how the code handles errors.
+
+# Python's unittest.mock module provides tools for mocking.
+
+# 1. Using MagicMock.
+-> MagicMock is a powerful mock object that automatically generates return values.
+
+----------------------------------------------------
+from unittest.mock import MagicMock
+
+# Create a mock object
+mock_obj = MagicMock()
+
+# Set return value
+mock_obj.some_method.return_value = "Hello, Mock!"
+
+# Call the method
+print(mock_obj.some_method())  # Output: Hello, Mock!
+----------------------------------------------------
+
+# 2. 
+'''
 class TestEmployee(unittest.TestCase):
 
     @classmethod
