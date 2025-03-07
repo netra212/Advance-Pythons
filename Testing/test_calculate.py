@@ -26,7 +26,9 @@ class TestCalculate(unittest.TestCase):
         self.assertEqual(calculate.divide(-1, 1), -1)
         self.assertEqual(calculate.divide(-1, -1), 1)
 
-        self.assertRaises(ValueError, calculate.divide, 10, 0)
-        
+        # Implementing the context manager for testing. 
+        with self.assertRaises(ValueError):
+            calculate.divide(10, 0)
+
 if __name__ == "__main__":
     unittest.main()
